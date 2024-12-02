@@ -1,0 +1,48 @@
+<div
+  style="
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana;
+  "
+>
+  <h1>Movies</h1>
+  <ul
+    style="
+      font-size: 1rem;
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      flex-direction: column;
+    "
+  >
+    {% for movie in movies%}
+    <li>
+      <div id="info" style="display: flex; gap: 1rem">
+        <a
+          id="delete"
+          href="/movies/delete/{{movie.id}}"
+          style="text-decoration: none; color: red"
+          >delete</a
+        >
+        <b>{{movie.title}}</b> {{movie.year}}
+        <a id="open_movie" href="/movies/{{movie.id}}">Open</a>
+      </div>
+    </li>
+    {%empty%}
+    <li>No movies available</li>
+    {%endfor%}
+  </ul>
+  <a id="add_movie" href="/movies/add/"><p>Add movie</p></a>
+  <a
+    style="
+      padding: 5px;
+      color: black;
+      text-decoration: none;
+      background-color: #eeeeee;
+    "
+    href="/"
+    ><p id="home">Home</p></a
+  >
+</div>

@@ -1,0 +1,36 @@
+<form
+  enctype="multipart/form-data"
+  method="POST"
+  action="{% url 'add_movie' %}"
+  style="
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-family: Verdana;
+  "
+>
+  {% csrf_token %}
+  <input id="input_name" name="title" placeholder="Title" required />
+  <input
+    id="input_year"
+    name="year"
+    type="number"
+    placeholder="Year"
+    required
+  />
+  <input id="input_file" name="image" type="file" required />
+  <button id="submit" type="submit">Upload</button>
+  <a
+    id="movies"
+    style="
+      padding: 5px;
+      color: black;
+      text-decoration: none;
+      background-color: #eeeeee;
+    "
+    href="/movies/"
+    ><p>Go back</p></a
+  >
+</form>
