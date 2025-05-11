@@ -1,3 +1,4 @@
+(old project backend attached)
 # Startin the server for django
 
 - Start docker "net start com.docker.service" or desktop app
